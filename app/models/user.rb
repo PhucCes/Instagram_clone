@@ -6,4 +6,8 @@ class User < ApplicationRecord
 
   has_many :posts
   has_many :likes
+
+  def like? post_id
+    likes.find_by_post_id(post_id)
+  end
 end
