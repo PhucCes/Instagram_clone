@@ -3,4 +3,6 @@ class Post < ApplicationRecord
 
   belongs_to :user
   has_many :likes
+
+  validates :image, presence: true
 end

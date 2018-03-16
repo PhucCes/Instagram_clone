@@ -37,13 +37,16 @@ gem 'jbuilder', '~> 2.5'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-
 end
 
 # Authentication
 gem 'devise'
 # Upload image
 gem 'carrierwave', '~> 1.0'
+
+gem 'mini_magick', '~> 4.5', '>= 4.5.1'
+
+gem 'bootstrap-sass', '~> 3.3.5'
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
