@@ -41,12 +41,19 @@ end
 
 # Authentication
 gem 'devise'
+
 # Upload image
 gem 'carrierwave', '~> 1.0'
-
+# create image version
 gem 'mini_magick', '~> 4.5', '>= 4.5.1'
 
-gem 'bootstrap-sass', '~> 3.3.5'
+# style
+gem 'bootstrap-sass', '~> 3.3.7'
+
+gem 'sprockets-rails', :require => 'sprockets/railtie'
+
+# simple form
+gem 'simple_form', '> 3.1.0'
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
