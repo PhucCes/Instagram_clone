@@ -1,4 +1,4 @@
-<div id="comment_<%= comment.id %>">
+<div id="comment_<%= comment.id %>" class="comment">
   <div class="user-name">
     <%= comment.user.user_name %>
   </div>
@@ -10,4 +10,7 @@
       <span class="glyphicon glyphicon-remove delete-comment"></span>
     <% end %>
   <% end %>
+  <div class="time-ago">
+    <%= time_ago_in_words comment.created_at %>
+  </div>
 </div>

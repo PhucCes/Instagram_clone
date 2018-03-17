@@ -37,6 +37,11 @@ body {
   text-align: -webkit-center;
 }
 
+.time-ago {
+  color: #A5A7AA;
+  float: right;
+}
+
 .post {
   background-color: #fff;
   border-color: #edeeee;
@@ -58,15 +63,10 @@ body {
     }
     .user-name {
       font-weight: 500;
+      margin-right: 0.3em;
+      font-weight: bold;
+      white-space: nowrap
     }
-    .time-ago {
-      color: #A5A7AA;
-      float: right;
-    }
-  }
-  .image {
-    border-bottom: 1px solid #eeefef;
-    border-top: 1px solid #eeefef;
   }
 }
 
@@ -75,7 +75,9 @@ body {
     display: inline;
   }
   .caption {
-    margin-bottom: 7px;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #EEEFEF;
+    display: -webkit-inline-box;
   }
   .user-name {
     font-weight: 500;
@@ -86,15 +88,25 @@ body {
   .user-name, .caption-content {
     display: inline;
   }
-  #comment {
-    margin-top: 7px;
+  .comment {
+    margin-top: 1em;
+    display: block;
+    border-radius: 3px;
+    background: #e6e1e1;
+    padding: 8px;
     .user-name {
       font-weight: 500;
       margin-right: 0.3em;
+      font-weight: bold;
+      white-space: nowrap
     }
     .delete-comment {
       float: right;
       color: #515151;
+    }
+    .time-ago {
+      display: block;
+      float: none;
     }
   }
   margin-bottom: 7px;
@@ -121,7 +133,6 @@ body {
   margin-right: 24px;
   min-height: 68px;
   align-items: center;
-  border-top: 1px solid #EEEFEF;
   flex-direction: row;
   justify-content: center;
 }
