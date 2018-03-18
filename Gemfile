@@ -37,6 +37,13 @@ gem 'jbuilder', '~> 2.5'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.7'
+  gem "factory_bot_rails", "~> 4.0"
+  gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+  gem 'database_cleaner'
+  # help your app run on background, make test faster
+  gem 'spring-commands-rspec'
+  # lets you express expected outcomes on collections of an object in an example.
+  gem 'rspec-collection_matchers'
 end
 
 # Authentication
@@ -58,6 +65,8 @@ gem 'simple_form', '> 3.1.0'
 # full-text-search
 gem 'pg_search'
 
+gem 'byebug', platform: :mri
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
@@ -65,8 +74,6 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-
-  gem 'byebug', platform: :mri
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
