@@ -55,6 +55,9 @@ gem 'sprockets-rails', :require => 'sprockets/railtie'
 # simple form
 gem 'simple_form', '> 3.1.0'
 
+# full-text-search
+gem 'pg_search'
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
