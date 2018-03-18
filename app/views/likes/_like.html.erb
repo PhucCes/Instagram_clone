@@ -1,4 +1,4 @@
-<div class="like-button col-sm-2" id="likes_<%= post.id %>">
+<div class="like-button col-sm-12" id="likes_<%= post.id %>">
   <%= link_to '', post_likes_path(post), class: "glyphicon glyphicon-heart#{current_user.like?(post.id) ? '' : '-empty'}", remote: true, :method=>:post %>
   <span class="post-like-count"><%= post.likes.count %></span>
 </div>

@@ -12,13 +12,17 @@
     <div class="image center-block">
       <%= link_to (image_tag post.image.url(:medium), class:'img-responsive'), post_path(post) %>
     </div>
-    <div class="post-bottom">
+
+    <div class="post-caption">
       <%= render 'likes/like', post: post %>
       <div class="caption">
         <div class="caption-content">
           <%= post.title %>
         </div>
       </div>
+    </div>
+
+    <div class="post-bottom">
       <div class="comments" id="comments_<%= post.id %>">
         <% if post.comments %>
           <%= render post.comments %>
