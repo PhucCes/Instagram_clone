@@ -1,3 +1,9 @@
+<div class='posts-wrapper row'>
+  <%= form_tag(posts_path, :method => 'get') do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search title...", class: "form-control", 'data-toggle' => 'tooltip', title: 'Enter to search' %>
+  <% end %>
+</div>
+
 <div class="posts-wrapper row">
   <% @posts.each do |post| %>
     <%= render 'post', post: post %>

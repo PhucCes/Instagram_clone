@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.order(created_at: :desc)
+    @posts = params['search'].present? ? Post.search_by_title(params['search']) : Post.all
   end
 
   # GET /posts/1
