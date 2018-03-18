@@ -5,18 +5,17 @@ class LikesController < ApplicationController
     if @like
       @like.destroy!
     else
-      current_user.likes.create!(post_id: like_params['post_id'])
+      @like = current_user.likes.create!(post_id: params['post_id'])
+    end
+
+    respond_to do |format|
+      format.js
     end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def get_like
-      @like = current_user.likes.find_by_post_id(like_params['post_id'])
-    end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def like_params
-      params.require(:like).permit(:post_id)
+      @like = current_user.likes.find_by_post_id(params['post_id'])
     end
 end
