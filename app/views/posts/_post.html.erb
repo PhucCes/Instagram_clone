@@ -13,10 +13,7 @@
       <%= link_to (image_tag post.image.url(:medium), class:'img-responsive'), post_path(post) %>
     </div>
     <div class="post-bottom">
-      <div class="like-button col-sm-2">
-        <span class="glyphicon glyphicon-heart-empty"></span>
-        <span class="glyphicon"><%= post.likes.count %></span>
-      </div>
+      <%= render 'likes/like', post: post %>
       <div class="caption">
         <div class="caption-content">
           <%= post.title %>
@@ -32,7 +29,7 @@
     <div class="comment-like-form row">
       <div class="comment-form col-sm-11">
         <%= form_for([post, post.comments.build], remote: true) do |f| %>
-        <%= f.text_field :content, placeholder: 'Add a comment...', class: "form-control comment_content", id: "comment_content_#{post.id}" %>
+          <%= f.text_field :content, placeholder: 'Add a comment...', class: "form-control comment_content", id: "comment_content_#{post.id}" %>
         <% end %>
       </div>
     </div>

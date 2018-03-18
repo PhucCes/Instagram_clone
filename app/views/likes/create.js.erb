@@ -1,0 +1,6 @@
+$('#likes_<%= @like.post_id %>').find('.post-like-count').html("<%= @like.post.likes.count %>");
+<% if (current_user.like? @like.post_id) %>
+  $('#likes_<%= @like.post_id %>').find('.glyphicon').removeClass('glyphicon-heart-empty').addClass('glyphicon-heart');
+<% else %>
+  $('#likes_<%= @like.post_id %>').find('.glyphicon').removeClass('glyphicon-heart').addClass('glyphicon-heart-empty');
+<% end %>
