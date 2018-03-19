@@ -81,6 +81,13 @@ Rails.application.configure do
     config.logger = ActiveSupport::TaggedLogging.new(logger)
   end
 
+  config.serve_static_assets = true
+  config.assets.compile = true
+  config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect'
+
+  config.assets.precompile +=
+    Dir["#{Rails.root}/app/assets/stylesheets/site/site/*.*"].collect {|s| "site/" + File.basename(s).gsub(/.scss|.sass/, '') }
+
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 end
