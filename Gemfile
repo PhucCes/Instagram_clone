@@ -48,6 +48,8 @@ group :development, :test do
   gem 'cucumber-rails', :require => false
 
   gem 'capybara'
+
+  gem 'rails-controller-testing'
 end
 
 # Authentication

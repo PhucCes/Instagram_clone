@@ -2,9 +2,9 @@
 require 'spec_helper'
 require 'database_cleaner'
 require 'support/factory_bot'
-require 'capybara/rails'
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
+Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
@@ -57,6 +57,7 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+
   # clean database
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction
@@ -72,4 +73,11 @@ RSpec.configure do |config|
       example.run
     end
   end
+  # end cleaning
+
+  # loading Devise::Test::ControllerHelpers
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include RequestSpecHelper, type: :request
+  config.include Devise::TestHelpers, type: :controller
+  config.include Warden::Test::Helpers, type: :request
 end
