@@ -43,13 +43,14 @@
       <% else %>
         <div class='alert alert-<%= "#{type}" %>'>
       <% end %>
-    <ul>
-      <li>
-        <%= msg %>
-      </li>
-    </ul>
+        <ul>
+          <li>
+            <%= msg %>
+          </li>
+        </ul>
+      </div>
   <% end %>
+  <%= yield %>
 </div>
-<%= yield %>
 </body>
 </html>
