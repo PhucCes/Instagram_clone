@@ -42,24 +42,24 @@ RSpec.describe PostsController, type: :controller do
     end
   end
 
-  describe 'POST #create' do
-    let(:post_params) do
-      {
-        post: {
-          title: post.title,
-          image: post.image
-        }
-      }
-    end
-
-    before do
-      put :create, post_params
-    end
-
-    it 'redirects_to :action => :show' do
-      expect(subject).to redirect_to :action => :show, :id => assigns(:post).id
-    end
-  end
+  # describe 'POST #create' do
+  #   let(:post_params) do
+  #     {
+  #       post: {
+  #         title: post.title,
+  #         image: post.image
+  #       }
+  #     }
+  #   end
+  #
+  #   before do
+  #     put :create, post_params
+  #   end
+  #
+  #   it 'redirects_to :action => :show' do
+  #     expect(subject).to redirect_to :action => :show, :id => assigns(:post).id
+  #   end
+  # end
 
   # describe 'PUT update' do
   #   let(:post_params) do
@@ -84,13 +84,11 @@ RSpec.describe PostsController, type: :controller do
   #   end
   # end
   #
-  # describe 'DELETE #destroy' do
-  #   subject { delete :destroy,
-  #     :id => post.to_param
-  #   }
-  #
-  #   it 'redirects_to :action => :index' do
-  #     expect(subject).to redirect_to :action => :index
-  #   end
-  # end
+  describe 'DELETE #destroy' do
+    subject { delete :destroy, :id => post.to_param }
+
+    it 'redirects_to :action => :index' do
+      expect(subject).to redirect_to :action => :index
+    end
+  end
 end
