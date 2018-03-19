@@ -44,6 +44,10 @@ group :development, :test do
   gem 'spring-commands-rspec'
   # lets you express expected outcomes on collections of an object in an example.
   gem 'rspec-collection_matchers'
+
+  gem 'cucumber-rails', :require => false
+
+  gem 'capybara'
 end
 
 # Authentication

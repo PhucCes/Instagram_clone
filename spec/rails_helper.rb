@@ -2,6 +2,7 @@
 require 'spec_helper'
 require 'database_cleaner'
 require 'support/factory_bot'
+require 'capybara/rails'
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 # Prevent database truncation if the environment is production
