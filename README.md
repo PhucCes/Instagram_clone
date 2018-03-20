@@ -23,6 +23,8 @@ Technical requirement:
 
 * Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+* Deployment https://instalgram-clone.herokuapp.com/
 
 * ...
+
+# TODO: ADD REAL TIME FOR LIKE AND COMMENT BY ACTIONCABLE
